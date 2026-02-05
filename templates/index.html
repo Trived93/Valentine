@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Questionnaire 💕</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Starting Screen -->
+        <div id="startScreen" class="card">
+            <div class="heart-animation">💕</div>
+            <h1 id="startMessage">Trived wants to ask you some questions 💕</h1>
+            <button id="startBtn" class="btn btn-primary">Yes ❤️</button>
+        </div>
+
+        <!-- Quiz Card -->
+        <div id="quizCard" class="card hidden">
+            <h2 id="questionNumber"></h2>
+            <p id="questionText"></p>
+            <div id="optionsContainer"></div>
+            <div id="feedbackMessage" class="feedback hidden"></div>
+            <div class="button-container">
+                <button id="nextBtn" class="btn btn-primary hidden">Next Question →</button>
+                <button id="retryBtn" class="btn btn-secondary hidden">Try Again</button>
+            </div>
+        </div>
+
+        <!-- Final Screen -->
+        <div id="finalScreen" class="card hidden">
+            <div class="celebration">
+                <div class="heart-animation large">💖</div>
+                <h1>You passed the love test 💖💍</h1>
+                <p>I knew you would get all the answers right!</p>
+                
+                <!-- Question Form -->
+                <div id="questionForm" class="question-form">
+                    <p class="form-label">One last question for you 💭</p>
+                    <textarea id="answerInput" placeholder="Type your answer here..." maxlength="500"></textarea>
+                    <button id="submitAnswerBtn" class="btn btn-primary">Submit Answer</button>
+                    <p id="formMessage" class="form-message hidden"></p>
+                </div>
+
+                <button id="restartBtn" class="btn btn-primary">Take the quiz again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
